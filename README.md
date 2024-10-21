@@ -21,6 +21,8 @@
 
 ## How It Works :computer:
 
+- First, You Need to open the Folder on VSCode
+- Create file `client` and go inside the `client` folder
 - Install the package 
 
 ```bash
