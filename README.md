@@ -19,7 +19,7 @@
 - Configures the basic project setup for both frontend and backend environments.
 - Works with modern stacks like MERN (MongoDB, Express, React, Node.js)
 
-## How It Works :computer
+## How It Works :computer:
 
 - Install the package 
 
