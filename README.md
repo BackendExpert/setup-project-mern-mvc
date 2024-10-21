@@ -30,13 +30,13 @@
 ```
 
 - After install the Package
-- The package will generate
-- - <b>Client Folder: </b> React/Vue setup with essential configuration files.
-- - <b>Server Folder: </b> Node.js/Express setup with routing, middleware, and initial configurations.
-
 
 ```bash
 
     npx setup-project
 
 ```
+
+- The package will generate
+- - <b>Client Folder: </b> React/Vue setup with essential configuration files.
+- - <b>Server Folder: </b> Node.js/Express setup with routing, middleware, and initial configurations.
