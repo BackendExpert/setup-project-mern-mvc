@@ -5,3 +5,6 @@
 </p>
 
 ## About :information_source:
+
+- This NPM Package Developed for Simplify the Full Stack Development
+- Support only for MERN Stack (MongoDB, ExpressJS, ReactJS, NodeJS)
