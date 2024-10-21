@@ -27,5 +27,4 @@
 
     npm i setup-project-mern-mvc
 
-
 ```
