@@ -9,7 +9,7 @@ const client_destination = argv.destination || path.join(process.cwd(), '../');
 
 async function RunSetupProject() {
     try{
-
+        
     }
     catch(err){
         console.log("Error white setup Project ", err)
