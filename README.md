@@ -11,4 +11,7 @@
 - Support only for MERN Stack (MongoDB, ExpressJS, ReactJS, NodeJS)
 
 
-:question: Problem :arrow_right: Setting up project structure manually is time-consuming and error-prone.
+:question: <b>Problem</b> :arrow_right: Setting up project structure manually is time-consuming and error-prone.
+
+:heavy_check_mark: <b>Solution</b> :arrow_right: automates the creation of both client and server folders with all the necessary files.
+
