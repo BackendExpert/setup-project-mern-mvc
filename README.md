@@ -28,3 +28,12 @@
     npm i setup-project-mern-mvc
 
 ```
+
+- After install the Package
+
+
+```bash
+
+    npx setup-project
+
+```
