@@ -1,12 +1,29 @@
 {
   "name": "setup-project-mern-mvc",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "The NPM Package for setup the Project for MERN MVC",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackendExpert/setup-project-mern-mvc.git"
+  },
+  "keywords": [
+    "MERN"
+  ],
+  "author": "jehankandy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BackendExpert/setup-project-mern-mvc/issues"
+  },
+  "homepage": "https://github.com/BackendExpert/setup-project-mern-mvc#readme",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "yargs": "^17.7.2"
+  }
 }
