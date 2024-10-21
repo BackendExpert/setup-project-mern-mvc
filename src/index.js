@@ -7,7 +7,7 @@ const argv = require('yargs').argv;
 const client_source = argv.source || path.join(__dirname, '../docs/client');
 const client_destination = argv.destination || path.join(process.cwd(), './');
 
-const server_source = argv.source || path.join(__dirname, '../docs/server');
+const server_source = argv.source || path.join(__dirname, '../docs/toServer');
 const server_destination = argv.destination || path.join(process.cwd(), '../');
 
 async function RunSetupProject() {
