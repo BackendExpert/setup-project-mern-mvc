@@ -17,7 +17,15 @@
     "url": "git+https://github.com/BackendExpert/setup-project-mern-mvc.git"
   },
   "keywords": [
-    "MERN"
+    "MERN",
+    "MVC",
+    "Full Stack",
+    "MERN Stack",
+    "MongoDB",
+    "ExpressJS",
+    "ReactJS",
+    "NodeJS",
+    "2024"
   ],
   "author": "jehankandy",
   "license": "ISC",
