@@ -19,6 +19,11 @@
 - Configures the basic project setup for both frontend and backend environments.
 - Works with modern stacks like MERN (MongoDB, Express, React, Node.js)
 
+### v1.0.0 - 21 October 2024
+
+### v1.0.0 - 23 October 2024
+
+
 ## How It Works :computer:
 
 - First, You Need to open the Folder on VSCode
@@ -42,3 +47,5 @@
 - The package will generate
 - - <b>Client Folder: </b> React/Vue setup with essential configuration files.
 - - <b>Server Folder: </b> Node.js/Express setup with routing, middleware, and initial configurations.
+
+
