@@ -48,6 +48,9 @@
     npx setup-project
 
 ```
+- wait for final result on terminal
+
+    <img src='https://github.com/BackendExpert/setup-project-mern-mvc/blob/master/asset/final.PNG' />
 
 - The package will generate
 - - <b>Client Folder: </b> React/Vue setup with essential configuration files.
