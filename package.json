@@ -4,7 +4,7 @@
   "description": "The NPM Package for setup the Project for MERN MVC",
   "main": "src/index.js",
   "bin": {
-    "setup-project": "src/index.js"
+    "create-project-setup": "src/index.js"
   },
   "directories": {
     "doc": "docs"
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/BackendExpert/setup-project-mern-mvc#readme",
   "dependencies": {
     "fs-extra": "^11.2.0",
+    "inquirer": "^6.0.0",
     "yargs": "^17.7.2"
   }
 }
