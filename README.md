@@ -21,8 +21,13 @@
 
 ### v1.0.0 - 21 October 2024
 
+- Simply Copy files from NPM package to Project
+- Inital release of the Project
+
 ### v1.0.0 - 23 October 2024
 
+- when user run the command it runs some command in the Package
+- 2nd release of the Project
 
 ## How It Works :computer:
 
