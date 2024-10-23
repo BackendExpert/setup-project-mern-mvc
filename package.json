@@ -1,6 +1,6 @@
 {
   "name": "setup-project-mern-mvc",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The NPM Package for setup the Project for MERN MVC",
   "main": "src/index.js",
   "bin": {

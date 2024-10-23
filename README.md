@@ -45,7 +45,7 @@
 
 ```bash
 
-    npx setup-project
+    npx create-project-setup
 
 ```
 - wait for final result on terminal
