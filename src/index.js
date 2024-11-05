@@ -99,19 +99,7 @@ async function InstallTailwindCSS () {
             await fs.promises.copyFile(client_AppJSX_source, path.join(client_AppJSX_destination, 'App.jsx'));
             console.log(`Tailwind CSS installed and Initialized successfully.`);
             console.log(`Changing Current Working Directory to Root Directory...`);
-            const rootDir = path.join(currentDir, './');
 
-            process.chdir(rootDir);
-
-            console.log(`Changed Current Working Directory to Root Directory Successfull...! ${process.cwd()}`);
-
-            console.log(`Deleting Unnecessary Files and Folders from Root Directory...`);
-
-            await DeleteUnnecessaryFilesandFolders()
-
-            console.log(`Root Directory Clear Successful...!`);
-
-            console.log(`Now you can Continue.., Server will be added in Future Releases..`);
 
         } else {
             console.error(`Source CSS file does not exist: ${client_tailwind_index_source}`);
@@ -139,10 +127,27 @@ async function CreateServerNodeJs() {
         const server_packageJson_source = argv.source || path.join(__dirname, '../docs/package.json');
         const server_packageJson_destination = argv.destination || path.join(process.cwd(), './');  
 
+        console.log(`Source path for package.json: ${server_packageJson_source}`);
+        console.log(`Destination path for package.json: ${server_packageJson_destination}`);
+
 
         if (fs.existsSync(server_packageJson_source)) {
             await fs.promises.copyFile(server_packageJson_source, path.join(server_packageJson_destination, 'package.json'));
             console.log(`Tailwind CSS installed and Initialized successfully.`);
+
+            const rootDir = path.join(currentDir, './');
+
+            process.chdir(rootDir);
+
+            console.log(`Changed Current Working Directory to Root Directory Successfull...! ${process.cwd()}`);
+
+            console.log(`Deleting Unnecessary Files and Folders from Root Directory...`);
+
+            await DeleteUnnecessaryFilesandFolders()
+
+            console.log(`Root Directory Clear Successful...!`);
+
+            console.log(`Now you can Continue.., Server will be added in Future Releases..`);
         }
         else{
             console.log("Source File Not Found")
