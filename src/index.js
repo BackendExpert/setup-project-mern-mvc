@@ -7,6 +7,7 @@ const currentDir = process.cwd();
 const fs = require('fs');
 const { exit } = require('process');
 const argv = require('yargs').argv;
+const fs = require('fs-extra');
 
 async function execPromise(command) {
     return new Promise((resolve, reject) => {
@@ -139,12 +140,36 @@ async function CreateServerNodeJs() {
             const server_env_source = argv.source || path.join(__dirname, '../docs/.env');
             const server_env_destination = argv.destination || path.join(process.cwd(), './');  
 
+
             if (fs.existsSync(server_index_source)) {
                 await fs.promises.copyFile(server_index_source, path.join(server_index_destination, 'server.js')); 
                 console.log(`Server file Initialized successfully.`);
 
                 await fs.promises.copyFile(server_index_source, path.join(server_index_destination, '.env')); 
                 console.log(`ENV file of Server Initialized successfully.`);
+
+                const dbContent = `
+const mongoose = require('mongoose');
+
+const ConnectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("MongoDB Connected!");
+    } catch (err) {
+        console.log(err);
+        process.exit(1); // Exit process with failure
+    }
+};
+module.exports = ConnectDB;
+                `;
+
+                const configDir = `./config`;
+                fs.ensureDirSync(configDir);
+                fs.writeFileSync(`${configDir}/db.js`, dbContent);
+                console.log(`Database Config file Created Successful`);
 
                 const rootDir = path.join(currentDir, './');
                 process.chdir(rootDir);
