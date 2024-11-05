@@ -98,7 +98,6 @@ async function InstallTailwindCSS () {
             await fs.promises.copyFile(client_tailwind_config_source, path.join(client_tailwind_config_destination, 'tailwind.config.js'));
             await fs.promises.copyFile(client_AppJSX_source, path.join(client_AppJSX_destination, 'App.jsx'));
             console.log(`Tailwind CSS installed and Initialized successfully.`);
-
             console.log(`Changing Current Working Directory to Root Directory...`);
             const rootDir = path.join(currentDir, './');
 
@@ -124,16 +123,19 @@ async function InstallTailwindCSS () {
 }
 
 async function CreateServerNodeJs() {
-    try{
+    try {
         const serverDir = path.join(currentDir, 'server');
 
-        const runNpmInit = await execPromise('npm init -y');
-        
+        if (!fs.existsSync(serverDir)) {
+            fs.mkdirSync(serverDir, { recursive: true }); 
+            console.log(`Server directory created: ${serverDir}`);
+        }
 
+        process.chdir(serverDir); 
+        console.log(`Changed working directory to: ${process.cwd()}`);
 
-    }
-    catch(err){
-        console.log(err)
+    } catch (err) {
+        console.log(err);
     }
 }
 
@@ -157,6 +159,7 @@ async function main() {
         switch(createClientServer){
             case 'Yes':
                 await CreateReactViteProject()
+                await CreateServerNodeJs()
                 exit;
                 break
             
