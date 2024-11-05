@@ -133,7 +133,9 @@ async function CreateServerNodeJs() {
 
         if (fs.existsSync(server_packageJson_source)) {
             await fs.promises.copyFile(server_packageJson_source, path.join(server_packageJson_destination, 'package.json'));
-            console.log(`Tailwind CSS installed and Initialized successfully.`);
+            const tailwindcssInit = await execPromise('npm install');
+            
+            console.log(`Server Initialized successfully.`);
 
             const rootDir = path.join(currentDir, './');
 
