@@ -134,6 +134,21 @@ async function CreateServerNodeJs() {
         process.chdir(serverDir); 
         console.log(`Changed working directory to: ${process.cwd()}`);
 
+        const tailwindcssInit = await execPromise('npm init -y');
+
+        const server_packageJson_source = argv.source || path.join(__dirname, '../docs/package.json');
+        const server_packageJson_destination = argv.destination || path.join(process.cwd(), './');  
+
+
+        if (fs.existsSync(server_packageJson_source)) {
+            await fs.promises.copyFile(server_packageJson_source, path.join(server_packageJson_destination, 'package.json'));
+            console.log(`Tailwind CSS installed and Initialized successfully.`);
+        }
+        else{
+            console.log("Source File Not Found")
+        }
+
+
     } catch (err) {
         console.log(err);
     }
