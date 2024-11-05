@@ -123,6 +123,20 @@ async function InstallTailwindCSS () {
     }
 }
 
+async function CreateServerNodeJs() {
+    try{
+        const serverDir = path.join(currentDir, 'server');
+
+        const runNpmInit = await execPromise('npm init -y');
+        
+
+
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 async function NoFunc() {
     console.log("Under Development")
 }
