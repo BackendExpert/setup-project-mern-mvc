@@ -4,7 +4,6 @@ const inquirer = require('inquirer');
 const { exec } = require('child_process');
 const path = require('path')
 const currentDir = process.cwd();
-const fs = require('fs');
 const { exit } = require('process');
 const argv = require('yargs').argv;
 const fs = require('fs-extra');
@@ -145,7 +144,7 @@ async function CreateServerNodeJs() {
                 await fs.promises.copyFile(server_index_source, path.join(server_index_destination, 'server.js')); 
                 console.log(`Server file Initialized successfully.`);
 
-                await fs.promises.copyFile(server_index_source, path.join(server_index_destination, '.env')); 
+                await fs.promises.copyFile(server_env_source, path.join(server_env_destination, '.env')); 
                 console.log(`ENV file of Server Initialized successfully.`);
 
                 const dbContent = `
@@ -180,7 +179,7 @@ module.exports = ConnectDB;
                 await DeleteUnnecessaryFilesandFolders();
 
                 console.log(`Root Directory Clear Successful...!`);
-                console.log(`Now you can continue...`);
+                console.log(`Now you can continue... to create Models Controllers and Routes please use : https://www.npmjs.com/package/automate-backend-fullstack`);
             } else {
                 console.log("Source file cannot be found");
             }
