@@ -122,51 +122,47 @@ async function CreateServerNodeJs() {
         process.chdir(serverDir); 
         console.log(`Changed working directory to: ${process.cwd()}`);
 
-        const tailwindcssInit = await execPromise('npm init -y');
+        await execPromise('npm init -y');
 
         const server_packageJson_source = argv.source || path.join(__dirname, '../docs/package.json');
         const server_packageJson_destination = argv.destination || path.join(process.cwd(), './');  
 
-
-
         if (fs.existsSync(server_packageJson_source)) {
             await fs.promises.copyFile(server_packageJson_source, path.join(server_packageJson_destination, 'package.json'));
-            await execPromise('npm install');
             
+
             console.log(`Server Initialized successfully.`);
 
             const server_index_source = argv.source || path.join(__dirname, '../docs/server.js');
-            const server_index_destination = argv.destination || path.join(process.cwd(), './server');  
+            const server_index_destination = argv.destination || path.join(process.cwd(), './');  
+
+            const server_env_source = argv.source || path.join(__dirname, '../docs/.env');
+            const server_env_destination = argv.destination || path.join(process.cwd(), './');  
 
             if (fs.existsSync(server_index_source)) {
                 await fs.promises.copyFile(server_index_source, path.join(server_index_destination, 'server.js')); 
                 console.log(`Server file Initialized successfully.`);
 
+                await fs.promises.copyFile(server_index_source, path.join(server_index_destination, '.env')); 
+                console.log(`ENV file of Server Initialized successfully.`);
+
                 const rootDir = path.join(currentDir, './');
-
                 process.chdir(rootDir);
-    
-                console.log(`Changed Current Working Directory to Root Directory Successfull...! ${process.cwd()}`);
-    
+
+                console.log(`Changed Current Working Directory to Root Directory Successfully: ${process.cwd()}`);
                 console.log(`Deleting Unnecessary Files and Folders from Root Directory...`);
-    
-                await DeleteUnnecessaryFilesandFolders()
-    
+
+                await DeleteUnnecessaryFilesandFolders();
+
                 console.log(`Root Directory Clear Successful...!`);
-    
-                console.log(`Now you can Continue.., `);
+                console.log(`Now you can continue...`);
+            } else {
+                console.log("Source file cannot be found");
             }
 
-            else{
-                console.log("Source file cannot find")
-            }
-
-
+        } else {
+            console.log("Source file not found");
         }
-        else{
-            console.log("Source File Not Found")
-        }
-
 
     } catch (err) {
         console.log(err);
