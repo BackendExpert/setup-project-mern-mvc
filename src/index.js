@@ -193,9 +193,6 @@ module.exports = ConnectDB;
     }
 }
 
-async function CreateFrontEndAuth(){
-    
-}
 
 async function NoFunc() {
     console.log("Under Development")
