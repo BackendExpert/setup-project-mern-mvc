@@ -21,3 +21,15 @@ async function execPromise(command) {
         });
     });
 }
+
+async function CreateFrontAuth(){
+    const createComponentSource = argv.source || path.join(__dirname, '../docs/components/DefualtBtn.jsx');
+    const createComponentDestination = argv.destination || path.join(process.cwd(), './src/');
+ 
+}
+
+async function main() {
+
+}
+
+main()
